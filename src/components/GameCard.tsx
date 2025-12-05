@@ -1,5 +1,5 @@
 import type { Game } from '../hooks/useGames';
-import { optimizeGameImage } from '../services/image-optimization';
+import { optimizeImage } from '../services/image-optimization';
 import GameScore from './GameScore';
 import PlatformIconList from './PlatformIconList';
 
@@ -10,10 +10,10 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <>
-      <div>
+      <div className='w-[350px]'>
         <img
           className="w-[350px] h-[275px] rounded-t-2xl"
-          src={optimizeGameImage(game.background_image)}
+          src={optimizeImage(game.background_image, 600, 400)}
           alt=""
         />
         <div className="p-3 bg-amber-200 dark:bg-zinc-700">
